@@ -3,31 +3,13 @@ import { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import CommentList from './components/CommentList';
 
-type Comment = {
-  content: string
-  comments: Comment[]
-}
-
 export default function App() {
-  const [comments, setComments] = useState<Comment[]>([])
-  const [comment, setComment] = useState<string>("")
-
-  const addComment = () => {
-    const new_comment = {
-      content: comment, 
-      comments: []
-    }
-    setComments([...comments, new_comment])
-    setComment("")
-  }
-
   return (
     <View style={styles.container}>
-      <Text>COMMENTS!</Text>
-      <TextInput onChangeText={setComment} value={comment}/>
-      <Button title='Add Comment' onPress={addComment}/>
-      <View></View>
-      <CommentList comments={comments}/>
+      <Text style={styles.title}>COMMENTS!</Text>
+      <View style={styles.list}>
+        <CommentList textHint="Add a comment"/>
+      </View>
     </View>
   );
 }
@@ -37,6 +19,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
   },
+
+  title: {
+    fontSize: 40,
+    fontWeight:'bold'
+  },
+
+  list: {
+    padding: 10,
+    alignItems:'flex-start'
+  }
 });
