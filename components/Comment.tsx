@@ -1,41 +1,24 @@
-import {View, Text, FlatList, TextInput, Button, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet} from 'react-native'
 import React, { useState } from 'react'
 import CommentList from './CommentList'
 
-type Comment = {
-    content: string
-    comments: Comment[]
-}  
-
 export default function Comment(props: any) {
-    const [comment, setComment] = useState<string>("")
-    const [comments, setComments] = useState<Comment[]>([])
-
-    const addComment = () => {
-        const new_comment = {
-            content: comment, 
-            comments: []
-        }
-        setComments([...comments, new_comment])
-        setComment("")
-    }
     return (
-        <View>
-            <Text>{props.comment}</Text>
-            <View style={styles.comment}>
-                <TextInput onChangeText={setComment} value={comment}/>
-                <Button title={"New Comment"} onPress={addComment}/>
-            </View>
+        <View >
+            <Text style={{borderWidth: 1}}>{props.content}</Text>
             <View style={styles.list}>
-                <CommentList comments={comments}/>
+                <CommentList textHint={props.textHint}/>
             </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    comment:{
-        flexDirection:'row'
+    container: {
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent: 'center',
+        borderWidth: 5,
     },
     list: {
         paddingLeft: 20,
