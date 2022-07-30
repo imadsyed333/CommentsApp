@@ -6,7 +6,7 @@ import CommentList from './components/CommentList';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>COMMENTS!</Text>
+      <Text style={styles.title}>THE COMMENTS SECTION</Text>
       <View style={styles.list}>
         <CommentList textHint="Add a comment"/>
       </View>
