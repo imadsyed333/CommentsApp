@@ -4,7 +4,7 @@ import CommentList from './CommentList'
 
 export default function Comment(props: any) {
     return (
-        <View >
+        <View style={styles.container}>
             <Text style={{borderWidth: 1}}>{props.content}</Text>
             <View style={styles.list}>
                 <CommentList textHint={props.textHint}/>
@@ -15,10 +15,7 @@ export default function Comment(props: any) {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent: 'center',
-        borderWidth: 5,
+        paddingVertical: 10,
     },
     list: {
         paddingLeft: 20,
