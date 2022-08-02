@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 import CommentList from './components/CommentList';
 
 export default function App() {

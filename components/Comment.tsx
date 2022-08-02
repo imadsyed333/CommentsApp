@@ -1,5 +1,5 @@
 import {View, Text, StyleSheet} from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import CommentList from './CommentList'
 
 export default function Comment(props: any) {
